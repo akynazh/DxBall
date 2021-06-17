@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f887c695-c669-4879-b345-aa285293b51f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GameInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameFrame.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MyBallPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StartInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyBall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyBall.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +34,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GUITest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../@git/brick_game" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.BallsJFrame">
+    <configuration name="BallsJFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BallsJFrame" />
+      <module name="DxBall" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GameTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameTest" />
       <module name="DxBall" />
@@ -49,6 +56,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BallsJFrame" />
         <item itemvalue="Application.GameTest" />
       </list>
     </recent_temporary>
