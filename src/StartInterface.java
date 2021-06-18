@@ -4,6 +4,8 @@ import java.util.Random;
 
 public class StartInterface extends JFrame {
     private JPanel myPanel1 = new JPanel();
+    private int choose = 0;
+    private int delay = 20;
     public StartInterface() {
         setTitle("DxBall");
         setVisible(true);
@@ -18,7 +20,7 @@ public class StartInterface extends JFrame {
         optionButton1.setBackground(Color.white);
         optionButton1.addActionListener(event->{{
             dispose();
-            var game = new GameInterface();
+            var game = new GameInterface(delay);
             game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         }});
 
@@ -28,8 +30,23 @@ public class StartInterface extends JFrame {
             System.exit(0);
         });
 
-        JButton optionButton3 = new JButton("level");
+        JButton optionButton3 = new JButton();
+        optionButton3.setText("level");
         optionButton3.setBackground(new Color(135, 206, 235));
+        optionButton3.addActionListener(event->{
+            if (choose == 0) {
+                optionButton3.setText("easy");
+                choose = 1;
+            } else if (choose == 1) {
+                optionButton3.setText("hard");
+                choose = 2;
+                delay = 10;
+            } else if(choose == 2) {
+                optionButton3.setText("nightmare");
+                choose = 0;
+                delay = 5;
+            }
+        });
 
         add(optionButton1);
         add(optionButton2);
@@ -39,18 +56,7 @@ public class StartInterface extends JFrame {
         optionButton3.setBounds(250, 200, 100, 50);
 
 
-        JButton colorOption = new JButton("color");
-        add(colorOption);
-        colorOption.setBounds(0, 0, 70, 15);
-        colorOption.addActionListener(event->{
-            Random r1 = new Random(), r2 = new Random(), r3 = new Random();
-            int r, g, b;
-            r = r1.nextInt(256);
-            g = r2.nextInt(256);
-            b = r3.nextInt(256);
-            myPanel1.setBackground(new Color(r, g, b));
-            repaint();
-        });
+
 
         add(myPanel1);
     }
