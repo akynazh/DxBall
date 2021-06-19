@@ -5,8 +5,7 @@ import java.awt.event.MouseEvent;
 import java.util.Random;
 
 public class GameInterface extends JFrame {
-    private MyBall myBall;
-    private MyBrick myBrick;
+    private MyPanel myPanel;
     private int time = 0;
     private int score = 0;
 
@@ -14,8 +13,8 @@ public class GameInterface extends JFrame {
         setTitle("DxBall");
         setVisible(true);
         setBounds(300, 80, 600, 500);
-        myBall = new MyBall(delay);
-        add(myBall);
+        myPanel = new MyPanel(delay);
+        add(myPanel);
 
         var menuBar = new JMenuBar();
         this.setJMenuBar(menuBar);
@@ -38,7 +37,7 @@ public class GameInterface extends JFrame {
                 r = r1.nextInt(256);
                 g = r2.nextInt(256);
                 b = r3.nextInt(256);
-                myBall.setBackground(new Color(r, g, b));
+                myPanel.setBackground(new Color(r, g, b));
                 repaint();
             }
         });
