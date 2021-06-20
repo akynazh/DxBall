@@ -5,7 +5,7 @@ import java.util.Random;
 public class StartInterface extends JFrame {
     private JPanel myPanel1 = new JPanel();
     private int choose = 0;
-    private int delay = 20;
+    private int speed = 3;
     public StartInterface() {
         setTitle("DxBall");
         setVisible(true);
@@ -20,7 +20,7 @@ public class StartInterface extends JFrame {
         optionButton1.setBackground(Color.white);
         optionButton1.addActionListener(event->{{
             dispose();
-            var game = new GameInterface(delay);
+            var game = new GameInterface(speed);
             game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         }});
 
@@ -37,14 +37,15 @@ public class StartInterface extends JFrame {
             if (choose == 0) {
                 optionButton3.setText("easy");
                 choose = 1;
+                speed = 3;
             } else if (choose == 1) {
                 optionButton3.setText("hard");
                 choose = 2;
-                delay = 10;
+                speed = 5;
             } else if(choose == 2) {
                 optionButton3.setText("nightmare");
                 choose = 0;
-                delay = 5;
+                speed = 7;
             }
         });
 
@@ -54,9 +55,6 @@ public class StartInterface extends JFrame {
         optionButton1.setBounds(250, 100, 100, 50);
         optionButton2.setBounds(250, 150, 100, 50);
         optionButton3.setBounds(250, 200, 100, 50);
-
-
-
 
         add(myPanel1);
     }
