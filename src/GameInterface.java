@@ -3,27 +3,39 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
 
+/**
+ * @author jzh
+ * @date 2021/6/21
+ * class 游戏界面类
+ */
+
 public class GameInterface extends JFrame {
-    private MyPanel myPanel;
+    public MyPanel myPanel;
+    private final JMenu timeMenu;
+    private final JMenu scoreMenu;
+    public static final int GAME_X = 200, GAME_Y = 60, GAME_WIDTH = 900, GAME_HEIGHT = 700;
+
     public static double time = 0;
     public static int score = 0;
-    private JMenu timeMenu;
-    private JMenu scoreMenu;
-    public static Timer timer;
+    public int passNum;
+    public Timer timer;
+    public boolean success, overFlag, continuePlay;
 
-    public GameInterface(int speed) {
+    public GameInterface(int speed, int passNum) {
+        success = overFlag = continuePlay = false;
+        this.passNum = passNum;
         setTitle("DxBall");
         setVisible(true);
-        setBounds(300, 80, 600, 500);
-        myPanel = new MyPanel(speed);
+        setBounds(GAME_X, GAME_Y, GAME_WIDTH, GAME_HEIGHT);
+        myPanel = new MyPanel(speed, passNum);
         add(myPanel);
 
-        //设置菜单栏
+        // 设置菜单栏
         var menuBar = new JMenuBar();
         this.setJMenuBar(menuBar);
 
-        //设置菜单选项
-        var exitMenu = new JMenu("Exit");
+        // 设置菜单选项
+        var exitMenu = new JMenu("退出游戏");
         exitMenu.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -31,13 +43,13 @@ public class GameInterface extends JFrame {
             }
         });
 
-        scoreMenu = new JMenu("Score: " + score);
+        scoreMenu = new JMenu("得分: " + score);
         scoreMenu.addActionListener(new TimeAndScoreActionListener());
 
-        timeMenu = new JMenu("Time: " + time);
+        timeMenu = new JMenu("用时: " + time + "s");
         timeMenu.addActionListener(new TimeAndScoreActionListener());
 
-        var colorMenu = new JMenu("^_^Change BackgroundColor^_^");
+        var colorMenu = new JMenu("改变游戏背景");
         colorMenu.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -51,25 +63,31 @@ public class GameInterface extends JFrame {
             }
         });
 
-        //添加菜单选项
+        // 添加菜单选项
         menuBar.add(scoreMenu);
         menuBar.add(timeMenu);
         menuBar.add(exitMenu);
         menuBar.add(colorMenu);
     }
 
-    //监控游戏时间和得分情况
+    // 监控游戏时间，得分情况，闯关情况
     private class TimeAndScoreActionListener implements ActionListener {
         public TimeAndScoreActionListener() {
-            timer = new Timer(1000,this);
+            timer = new Timer(1000, this);
             timer.start();
         }
+
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (!MyPanel.flag) time += 0.5;
-            if (!MyPanel.flag) score = MyPanel.bricksNum * 100;
-            timeMenu.setText("Time: " + time + "s");
-            scoreMenu.setText("Score: " + score);
+            if (!myPanel.overFlag) time += 0.5;
+            if (!myPanel.overFlag) score = myPanel.bricksNum * 100 + myPanel.additionalScore;
+            if (myPanel.overFlag) {
+                overFlag = true;
+                if (myPanel.success) success = true;
+                if (myPanel.continuePlay) continuePlay = true;
+            }
+            timeMenu.setText("用时: " + time + "s");
+            scoreMenu.setText("得分: " + score);
         }
     }
 }
