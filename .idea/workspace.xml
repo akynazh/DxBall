@@ -6,7 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f887c695-c669-4879-b345-aa285293b51f" name="Default Changelist" comment="" />
+    <list default="true" id="f887c695-c669-4879-b345-aa285293b51f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/DxBall.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DxBall.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StartInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StartInterface.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,8 +42,21 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.19732034" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunManager" selected="Application.GameTest">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <useClassPathOnly />
+      <extension name="GrepConsole" selectedProfileId="1623337556234" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BallsJFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BallsJFrame" />
       <module name="DxBall" />
@@ -47,7 +64,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="GameTest" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="GameTest" />
       <module name="DxBall" />
       <method v="2">
@@ -55,15 +74,40 @@
       </method>
     </configuration>
     <configuration name="Jpanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk-11.0.11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Jpanel" />
       <module name="DxBall" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="JavaSE-11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="DxBall" />
+      <extension name="GrepConsole" selectedProfileId="1623337556234" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="DxBall" />
+      <extension name="GrepConsole" selectedProfileId="1623337556234" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Application.GameTest" />
+      <item itemvalue="Application.BallsJFrame" />
+      <item itemvalue="Application.Jpanel" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameTest" />
         <item itemvalue="Application.Jpanel" />
         <item itemvalue="Application.BallsJFrame" />
       </list>

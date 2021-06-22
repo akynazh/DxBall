@@ -215,8 +215,8 @@ public class MyPanel extends JPanel {
                     if (ball.type != 3) {
                         g.fillRect(brick.x, brick.y, brick.width, brick.height);
                     } else {
-                        if (brick.x >= boom_x - brick.width && brick.x <= boom_x + 2 * brick.width &&
-                                brick.y >= boom_y - brick.height && brick.y <= boom_y + 2 * brick.height) {
+                        if (brick.x >= boom_x - 2 * brick.width && brick.x <= boom_x + 3 * brick.width &&
+                                brick.y >= boom_y - 2 * brick.height && brick.y <= boom_y + 3 * brick.height) {
                             brick.exist = false;
                         } else {
                             g.fillRect(brick.x, brick.y, brick.width, brick.height);

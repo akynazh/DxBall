@@ -68,6 +68,8 @@ public class StartInterface extends JFrame {
                         gameInterfaces.poll();
                         speed++;
                         passNum++;
+                        GameInterface.time = 0;
+                        GameInterface.score = 0;
                         gameInterfaces.add(new GameInterface(speed, passNum));
                         try {
                             Thread.sleep(2000);
