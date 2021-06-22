@@ -24,7 +24,7 @@ public class MyPanel extends JPanel {
     public final LinkedList<Prop> props = new LinkedList<>();
 
     public int speed, passNum;
-    public boolean overFlag, startFlag, success, continuePlay, addFlag;
+    public boolean overFlag, startFlag, success, continuePlay, addFlag, restartFlag;
     public int bricksNum = 0, additionalScore = 0, originSpeed;
     public Timer timer;
 
@@ -32,7 +32,7 @@ public class MyPanel extends JPanel {
         this.speed = speed;
         this.passNum = passNum;
         originSpeed = speed;
-        overFlag = startFlag = success = continuePlay = addFlag = false;
+        overFlag = startFlag = success = continuePlay = addFlag = restartFlag = false;
         setBounds(GAME_X, GAME_Y, GAME_WIDTH, GAME_HEIGHT);
 
         // 添加三种图形
@@ -47,7 +47,7 @@ public class MyPanel extends JPanel {
             if (x < GAME_WIDTH - BRICK_WIDTH - 10) x += BRICK_WIDTH + 10;
             else x = 0;
         }
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 15; i++) {
             bricks[r.nextInt(bricks.length)].type = r.nextInt(10);
         }
         if (originSpeed == 5 || originSpeed == 6) {
@@ -58,7 +58,7 @@ public class MyPanel extends JPanel {
         this.ball = new Ball(plank.x + plank.width / 2 - 6, plank.y - BALL_R, BALL_R, Color.RED);
 
         // 设置初始背景
-        this.setBackground(Color.darkGray);
+        this.setBackground(new Color(139, 126, 102));
 
         // 每隔一段时间刷新
         timer = new Timer(1, event -> repaint());
@@ -163,7 +163,7 @@ public class MyPanel extends JPanel {
                 var f1 = new Font("宋体", Font.BOLD, 90);
                 var f2 = new Font("宋体", Font.PLAIN, 40);
                 g.setFont(f1);
-                g.setColor(Color.RED);
+                g.setColor(new Color(139, 28, 98));
                 if (GameInterface.score >= 2000) {
                     success = true;
                     g.drawString(overMessage1, GAME_WIDTH / 3, GAME_HEIGHT / 4);
@@ -185,17 +185,20 @@ public class MyPanel extends JPanel {
                 continueButton.addActionListener(event -> continuePlay = true);
 
                 JButton overButton = new JButton();
-                overButton.setBackground(Color.orange);
+                overButton.setBackground(new Color(169, 169, 169));
                 overButton.setBounds(GAME_WIDTH / 3, GAME_HEIGHT / 4 + 270, 150, 50);
                 overButton.addActionListener(event -> System.exit(0));
 
+                JButton restartButton = new JButton("返回主菜单");
+                restartButton.setBackground(new Color(169, 169, 169));
+                restartButton.setBounds(GAME_WIDTH / 3, GAME_HEIGHT / 4 + 320, 150, 50);
+                restartButton.addActionListener(event-> restartFlag = true);
+                add(restartButton);
+
                 if (!addFlag) {
                     if (originSpeed < 6 && success) add(continueButton);
-                    else if (originSpeed == 6 && success) {
-                        overButton.setText("游戏通关");
-                        add(overButton);
-                    } else {
-                        overButton.setText("闯关失败");
+                    else {
+                        overButton.setText("退出游戏");
                         add(overButton);
                     }
                     addFlag = true;
@@ -207,9 +210,9 @@ public class MyPanel extends JPanel {
         if (!overFlag) {
             g.setColor(ball.color);
             g.fillOval(ball.x, ball.y, ball.r, ball.r);
-            g.setColor(new Color(205, 79, 57));
+            g.setColor(new Color(192, 255, 62));
             g.fillRect(plank.x, plank.y, plank.width, plank.height);
-            g.setColor(new Color(131, 111, 255));
+            g.setColor(new Color(192, 255, 62));
             for (Brick brick : bricks) {
                 if (brick.exist) {
                     if (ball.type != 3) {
@@ -241,12 +244,15 @@ public class MyPanel extends JPanel {
             // 绘制掉落道具
             for (Prop p : props) {
                 p.y += originSpeed - 1;
-                if (p.type == 1 || p.type == 2) g.setColor(Color.GREEN);
+                if (p.type == 1) g.setColor(Color.GREEN);
+                else if (p.type == 2) g.setColor(Color.white);
                 else if (p.type == 3) g.setColor(Color.RED);
-                else if (p.type == 4) g.setColor(Color.gray);
+                else if (p.type == 4) g.setColor(new Color(255, 110, 180));
                 else if (p.type == 5) g.setColor(Color.ORANGE);
                 else if (p.type == 6) g.setColor(Color.blue);
-                else if (p.type == 7 || p.type == 8 || p.type == 9) g.setColor(Color.BLACK);
+                else if (p.type == 7) g.setColor(new Color(155, 48, 255));
+                else if (p.type == 8) g.setColor(new Color(139, 69, 19));
+                else if (p.type == 9) g.setColor(Color.BLACK);
                 g.fillOval(p.x, p.y, p.width, p.height);
                 // 如果板接收到道具
                 if (p.y >= plank.y && p.y <= plank.y + 20 && p.x >= plank.x && p.x <= plank.x + 70) {

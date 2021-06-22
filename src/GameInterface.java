@@ -19,7 +19,7 @@ public class GameInterface extends JFrame {
     public static int score = 0;
     public int passNum;
     public Timer timer;
-    public boolean success, overFlag, continuePlay;
+    public boolean success, overFlag, continuePlay, restartFlag;
 
     public GameInterface(int speed, int passNum) {
         success = overFlag = continuePlay = false;
@@ -85,6 +85,7 @@ public class GameInterface extends JFrame {
                 overFlag = true;
                 if (myPanel.success) success = true;
                 if (myPanel.continuePlay) continuePlay = true;
+                if (myPanel.restartFlag) restartFlag = true;
             }
             timeMenu.setText("用时: " + time + "s");
             scoreMenu.setText("得分: " + score);

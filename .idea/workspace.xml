@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f887c695-c669-4879-b345-aa285293b51f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/DxBall.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DxBall.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StartInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StartInterface.java" afterDir="false" />
     </list>

@@ -30,19 +30,19 @@ public class StartInterface extends JFrame {
         JButton textButton = new JButton();
         textButton.setBackground(Color.gray);
         textButton.setText("<html>" +
-                "1.基本原则：接住小球并打尽可能多的砖块。<br>" +
+                "1.基本原则：接住小球并打下尽可能多的砖块。<br>" +
                 "2.键盘操作：按左右键即可移动砖块。<br>" +
                 "3.关卡设置：菜鸟；新手；专业；大师。<br>" +
-                "4.过关要求：获得超过2500则可过关。<br>" +
+                "4.过关要求：获得超过2000分则可过关。<br>" +
                 "5.加分规则1：每打一个砖块加100分。<br>" +
                 "6.加分规则2：每接收到一个道具加500分。<br>" +
                 "7.技巧1：低难度下尽可能在短时间内获得高分。<br>" +
                 "8.技巧2：高难度下尽可能存活更长时间。<br>" +
                 "9.道具说明：撞击砖块会随机掉落道具。<br>" +
                 "10.道具类型：<br>" +
-                "板变长（绿）；球变大（绿）；炸弹球（红）；<br>" +
-                "穿刺球（灰）；火箭球（橙）；冰球；（蓝）；<br>" +
-                "球变小（黑）；板变短（黑）；死亡（黑）。<br>" +
+                "板变长（绿）；球变大（白）；炸弹球（红）；<br>" +
+                "穿刺球（粉）；火箭球（橙）；冰球；（蓝）；<br>" +
+                "球变小（紫）；板变短（棕）；死亡（黑）。<br>" +
                 "<html/>");
 
         // 开始游戏按钮
@@ -76,6 +76,16 @@ public class StartInterface extends JFrame {
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
+                    } else if (gameInterfaces.peek().restartFlag) {
+                        gameInterfaces.peek().timer.stop();
+                        assert gameInterfaces.peek() != null;
+                        gameInterfaces.peek().remove(myPanel);
+                        assert gameInterfaces.peek() != null;
+                        gameInterfaces.peek().dispose();
+                        gameInterfaces.poll();
+                        GameInterface.time = 0;
+                        GameInterface.score = 0;
+                        timer.cancel();
                     }
                 }
             }, 1000, 2000);
