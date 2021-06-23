@@ -85,6 +85,8 @@ public class StartInterface extends JFrame {
                         gameInterfaces.poll();
                         GameInterface.time = 0;
                         GameInterface.score = 0;
+                        passNum = 0;
+                        speed = 3;
                         timer.cancel();
                     }
                 }
