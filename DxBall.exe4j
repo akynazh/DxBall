@@ -18,10 +18,10 @@
   </splashScreen>
   <java mainClass="GameTest" mainMode="1" vmParameters="-Dfile.encoding=utf-8" arguments="" allowVMPassthroughParameters="true" preferredVM="client" bundleRuntime="true" minVersion="1.8" maxVersion="11" allowBetaVM="false" jdkOnly="false">
     <searchSequence>
+      <directory location="/jre" />
       <registry />
       <envVar name="JAVA_HOME" />
       <envVar name="JDK_HOME" />
-      <directory location="/jre" />
     </searchSequence>
     <classPath>
       <archive location="D:/@java/DxBall/out/artifacts/DxBall/DxBall.jar" failOnError="false" />

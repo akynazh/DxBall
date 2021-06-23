@@ -6,12 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f887c695-c669-4879-b345-aa285293b51f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DxBall.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DxBall.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StartInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StartInterface.java" afterDir="false" />
-    </list>
+    <list default="true" id="f887c695-c669-4879-b345-aa285293b51f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,8 +97,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Unnamed" />
       <item itemvalue="Application.GameTest" />
+      <item itemvalue="Application.Unnamed" />
       <item itemvalue="Application.BallsJFrame" />
       <item itemvalue="Application.Jpanel" />
     </list>
